@@ -1,4 +1,4 @@
-package com.tlbtech.bffagendadortarefas.infrastructure.client.security;
+package com.tlbtech.bffagendadortarefas.infrastructure.security;
 
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;

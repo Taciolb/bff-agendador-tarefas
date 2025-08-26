@@ -5,7 +5,7 @@ import com.tlbtech.bffagendadortarefas.business.TarefasService;
 import com.tlbtech.bffagendadortarefas.business.dto.in.TarefasDTORequest;
 import com.tlbtech.bffagendadortarefas.business.dto.out.TarefasDTOResponse;
 import com.tlbtech.bffagendadortarefas.business.enums.StatusNotificacaoEnum;
-import com.tlbtech.bffagendadortarefas.infrastructure.client.security.SecurityConfig;
+import com.tlbtech.bffagendadortarefas.infrastructure.security.SecurityConfig;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
