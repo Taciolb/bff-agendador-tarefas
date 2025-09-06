@@ -19,9 +19,9 @@ public interface UsuarioClient {
                                             @RequestHeader("Authorization") String token);
 
     @PostMapping
-    UsuarioDTOResponse salvaUsuario(@RequestBody UsuarioDTORequest usuarioDTO) ;
+    UsuarioDTOResponse salvaUsuario(@RequestBody UsuarioDTORequest usuarioDTO);
 
-    @PostMapping("/login")
+      @PostMapping("/login")
     String login(@RequestBody LoginRequestDTO usuarioDTO);
 
     @DeleteMapping("/{email}")
