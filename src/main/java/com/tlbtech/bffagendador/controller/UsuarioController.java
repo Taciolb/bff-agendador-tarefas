@@ -66,7 +66,7 @@ public class UsuarioController {
     }
 
     @PutMapping
-    @Operation(summary = "Atualizar Dados de Usuários", description = "Atalizar dados de usuário")
+    @Operation(summary = "Atualizar Dados de Usuários", description = "Atualizar dados de usuário")
     @ApiResponse(responseCode = "200", description = "Usuario atualizado com sucesso")
     @ApiResponse(responseCode = "404", description = "Usuário não cadastrado")
     @ApiResponse(responseCode = "500", description = "Erro de servidor")
@@ -76,7 +76,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/endereco")
-    @Operation(summary = "Atualiza Endereço de Usuários", description = "Atualiza endereço de  usuário")
+    @Operation(summary = "Atualiza Endereço de Usuários", description = "Atualiza endereço de usuário")
     @ApiResponse(responseCode = "200", description = "Endereço atualizado com sucesso")
     @ApiResponse(responseCode = "404", description = "Usuário não encontrado")
     @ApiResponse(responseCode = "500", description = "Erro de servidor")
@@ -98,7 +98,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/endereco")
-    @Operation(summary = "Salva Endereço de Usuários", description = "Salva endereço de  usuário")
+    @Operation(summary = "Salva Endereço de Usuários", description = "Salva endereço de usuário")
     @ApiResponse(responseCode = "200", description = "Endereço salvo com sucesso")
     @ApiResponse(responseCode = "404", description = "Usuário não encontrado")
     @ApiResponse(responseCode = "500", description = "Erro de servidor")
@@ -108,7 +108,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/telefone")
-    @Operation(summary = "Salva Telefone de Usuários", description = "Salva telefone de  usuário")
+    @Operation(summary = "Salva Telefone de Usuários", description = "Salva telefone de usuário")
     @ApiResponse(responseCode = "200", description = "Telefone salvo com sucesso")
     @ApiResponse(responseCode = "404", description = "Usuário não encontrado")
     @ApiResponse(responseCode = "500", description = "Erro de servidor")
