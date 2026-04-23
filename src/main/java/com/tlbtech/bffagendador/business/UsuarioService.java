@@ -1,12 +1,13 @@
 package com.tlbtech.bffagendador.business;
 
 import com.tlbtech.bffagendador.business.dto.in.EnderecoDTORequest;
-import com.tlbtech.bffagendador.business.dto.in.LoginRequestDTO;
+import com.tlbtech.bffagendador.business.dto.in.LoginDTORequest;
 import com.tlbtech.bffagendador.business.dto.in.TelefoneDTORequest;
 import com.tlbtech.bffagendador.business.dto.in.UsuarioDTORequest;
 import com.tlbtech.bffagendador.business.dto.out.EnderecoDTOResponse;
 import com.tlbtech.bffagendador.business.dto.out.TelefoneDTOResponse;
 import com.tlbtech.bffagendador.business.dto.out.UsuarioDTOResponse;
+import com.tlbtech.bffagendador.business.dto.out.ViaCepDTOResponse;
 import com.tlbtech.bffagendador.infrastructure.client.UsuarioClient;
 
 import lombok.RequiredArgsConstructor;
@@ -24,7 +25,7 @@ public class UsuarioService {
         return client.salvaUsuario(usuarioDTO);
     }
 
-    public  String loginUsuario(LoginRequestDTO dto){
+    public  String loginUsuario(LoginDTORequest dto){
 
         return client.login(dto);
     }
@@ -64,7 +65,11 @@ public class UsuarioService {
     public TelefoneDTOResponse cadastraTelefone(String token, TelefoneDTORequest dto) {
 
         return client.cadastraTelefone(dto, token);
+    }
 
+    public ViaCepDTOResponse buscarEnderecoPorCep(String cep){
+
+        return client.buscarDadosCep(cep);
     }
 
 }

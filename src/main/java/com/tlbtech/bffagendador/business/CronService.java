@@ -1,6 +1,6 @@
 package com.tlbtech.bffagendador.business;
 
-import com.tlbtech.bffagendador.business.dto.in.LoginRequestDTO;
+import com.tlbtech.bffagendador.business.dto.in.LoginDTORequest;
 import com.tlbtech.bffagendador.business.dto.out.TarefasDTOResponse;
 import com.tlbtech.bffagendador.business.enums.StatusNotificacaoEnum;
 import lombok.RequiredArgsConstructor;
@@ -32,10 +32,10 @@ public class CronService {
         String token = login(converterParaRequestDTO());
         log.info("Iniciada a busca de tarefas");
 
+        LocalDateTime horaAtual = LocalDateTime.now();
         LocalDateTime horaFutura = LocalDateTime.now().plusHours(1);
-        LocalDateTime horaFuturaMaisCinco = LocalDateTime.now().plusHours(1).plusMinutes(5);
 
-        List<TarefasDTOResponse> listaTarefas = tarefasService.buscaTarefasAgendadasPorPeriodo(horaFutura, horaFuturaMaisCinco, token);
+        List<TarefasDTOResponse> listaTarefas = tarefasService.buscaTarefasAgendadasPorPeriodo(horaAtual, horaFutura, token);
         log.info("Tarefas encontradas " + listaTarefas);
         listaTarefas.forEach(tarefa -> {
             emailService.enviaEmail(tarefa);
@@ -45,12 +45,13 @@ public class CronService {
         log.info("Finalizada a busca e notificação de tarefas");
     }
 
-    public String login(LoginRequestDTO dto) {
+    public String login(LoginDTORequest dto) {
+
         return usuarioService.loginUsuario(dto);
     }
 
-    public LoginRequestDTO converterParaRequestDTO() {
-        return LoginRequestDTO.builder()
+    public LoginDTORequest converterParaRequestDTO() {
+        return LoginDTORequest.builder()
                 .email(email)
                 .senha(senha)
                 .build();

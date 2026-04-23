@@ -74,7 +74,7 @@ public class TarefasController {
     @PatchMapping
     @Operation(summary = "Altera status de tarefas",
             description = "Altera status das tarefas cadastradas")
-    @ApiResponse(responseCode = "200", description = "Status da tarefa alterado")
+    @ApiResponse(responseCode = "200", description = "Status da tarefa alterada")
     @ApiResponse(responseCode = "500", description = "Erro de servidor")
     public ResponseEntity<TarefasDTOResponse> alteraStatusNotificacao(@RequestParam("Status") StatusNotificacaoEnum status,
                                                                       @RequestParam("id") String id,
