@@ -1,12 +1,13 @@
 package com.tlbtech.bffagendador.infrastructure.client;
 
 import com.tlbtech.bffagendador.business.dto.in.EnderecoDTORequest;
-import com.tlbtech.bffagendador.business.dto.in.LoginRequestDTO;
+import com.tlbtech.bffagendador.business.dto.in.LoginDTORequest;
 import com.tlbtech.bffagendador.business.dto.in.TelefoneDTORequest;
 import com.tlbtech.bffagendador.business.dto.in.UsuarioDTORequest;
 import com.tlbtech.bffagendador.business.dto.out.EnderecoDTOResponse;
 import com.tlbtech.bffagendador.business.dto.out.TelefoneDTOResponse;
 import com.tlbtech.bffagendador.business.dto.out.UsuarioDTOResponse;
+import com.tlbtech.bffagendador.business.dto.out.ViaCepDTOResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +23,7 @@ public interface UsuarioClient {
 
 
     @PostMapping("/login")
-    String login(@RequestBody LoginRequestDTO usuarioDTO);
+    String login(@RequestBody LoginDTORequest usuarioDTO);
 
 
     @DeleteMapping("/{email}")
@@ -55,5 +56,9 @@ public interface UsuarioClient {
     @PostMapping("/telefone")
     TelefoneDTOResponse cadastraTelefone(@RequestBody TelefoneDTORequest dto,
                                          @RequestHeader(value = "Authorization", required = false) String token);
+
+    @GetMapping("/endereco/{cep}")
+    ViaCepDTOResponse buscarDadosCep(@PathVariable("cep") String cep);
+
 
 }
